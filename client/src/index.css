@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  /* outline: 1px solid red; */
+}
+
+/* TODO refactor all of this CSS, lots of duplicate code  */
+
+:root {
+  --dark-1: #1a1b24;
+  --dark-2: #282a30;
+  --dark-3: #2b2b36;
+  --dark-4: #22272e;
+  --light-1: #3c3c62;
+  --light-2: #3e4046;
+  --light-3: #585c71;
+  --blue-1: #5d61ed;
+  --text-dark: #7c7e84;
+  --text-light: #d5d3da;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+h2 { 
+  color: var(--text-light);
+}
+
+ul {
+  list-style: none;
+}
+
+aside button {
+  background: transparent;
+  border: 2px solid;
+  padding: 0.25rem 1rem;
+  color: hsl(347, 92%, 42%);
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 3px;
+  margin: 1rem;
+}
+
+aside button:hover {
+  background: hsl(347, 92%, 42%);
+  color: var(--dark-1);
+  border: 2px solid hsl(347, 92%, 42%);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+.active {
+  background: var(--blue-1);
+  color: var(--text-light);
+}
+
+.pending {
+  padding: 0.1rem;
+  color: var(--blue-1);
+  border: 2px solid;
+  border-radius: 2px;
+}
+
+.ACTIVE {
+  color: hsl(170, 38%, 50%);
+}
+
+main, nav, nav ul {
+  display: flex;
+}
+
+nav ul {
+  display: flex;
+  gap: 0.5rem;
+}
+
+nav {
+  height: 10vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 2px solid #303138;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+}
+
+#logreg {
+  width: 100%;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.auth-form {
+  min-width: 40ch;
+}
+
+.auth-form fieldset {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.auth-form fieldset > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.auth-form legend {
+  color: var(--text-light);
+  font-weight: bold;
+  padding: 0.25rem;
+}
+
+.auth-form input {
+  background: #27282f;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 3px;
+  color: var(--text-light);
+}
+
+.auth-form button {
+  background: var(--blue-1);
+  padding: 0.25rem 1rem;
+  border: none;
+  color: var(--text-light);
+  border-radius: 3px;
+}
+
+#error-container {
+  display: grid;
+  place-items: center;
+  place-content: center;
+}
+
+.friend-list {
+  height: 100%;
+  /* border-right: 2px solid var(--dark-2); */
+}
+
+.friend {
+  width: 100%;
+  padding: 0.25rem 2rem;
+  cursor: "pointer";
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.friend:hover {
+  background: hsl(234, 16%, 22%);
+}
+
+.friend.active:hover {
+  background: var(--blue-1);
+}
+
+body {
+  background: var(--dark-1);
+  color: var(--text-dark);
+}
+
+aside {
+  border-right: 2px solid #303138;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+aside h2 {
+  padding: 0.5rem;
+}
+
+
+#chat-container {
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  padding-top: 0;
+}
+
+#chat-container > h2 {
+  border-bottom: 2px solid #303138;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+#friend-requests-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  padding-top: 0;
+  width: 100%;
+}
+
+#friend-requests-container > h2 {
+  width: 100%;
+  border-bottom: 2px solid #303138;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+#friend-requests-container h3 {
+  color: var(--text-light);
+  border-bottom: 2px solid #303138;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+#friend-requests-container > div {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#searchForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* width: fit-content; */
+  justify-content: center;
+}
+
+#searchForm > fieldset {
+  display: flex;
+  gap: 0.5rem;
+  border: none;
+}
+
+.friend-requests {
+  display: flex;
+  flex-direction: column;
+}
+
+.friend-requests li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+} 
+
+.friend-requests button {
+  padding: 0.25rem 0.75rem;
+  color: var(--text-light);
+  background: #27282f;
+  border-radius: 3px;
+  border: 2px solid #303138;
+}
+
+.friend-requests button:hover {
+  background: hsl(233, 9%, 27%);
+}
+
+#message-list {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.message {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.message > p {
+  width: fit-content;
+}
+
+.error {
+  color: hsl(347, 92%, 72%);
+  background: hsl(347, 72%, 32%);
+  padding: 0.25rem;
+  border-radius: 3px;
+}
+
+.message button {
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  /* font-size: 1em; */
+  padding: 0.2rem 0.5rem;
+  background: transparent;
+  color: var(--light-1);
+  border: 2px solid;
+}
+
+.message button:hover {
+  background: var(--light-1);
+  color: var(--dark-1);
+  border: 2px solid var(--light-1);
+}
+
+.message > div {
+  min-height: 2rem;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message > div > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.message > div > p {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.message > div .text-light {
+  font-size: 1.5em;
+}
+
+.message > p {
+  width: fit-content;
+  padding: 0.5rem;
+  background: #27282f;
+  border-radius: 3px;
+  border: 2px solid #303138;
+}
+
+
+
+#messageForm{
+  margin: auto;
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+#messageForm input, #searchForm input {
+  background: #27282f;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 3px;
+  color: var(--text-light);
+  width: 100%;
+}
+
+#messageForm button, #searchForm button {
+  background: var(--blue-1);
+  padding: 0.25rem 1rem;
+  border: none;
+  color: var(--text-light);
+  border-radius: 3px;
+}
+
+/* .active{
+  color: black !important;
+} */
+
+.avatar{
+  width: 5rem;
+  border-radius: 50%;
+}
+
+#loadMessages{
+  margin: auto;
+  width: fit-content;
+}
+
+#messages-list button{
+  max-height: 2.5rem;
+  min-width: 80px !important;
+}
+
+/* .bold{
+  font-weight: bolder;
+} */
