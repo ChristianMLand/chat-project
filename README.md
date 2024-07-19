@@ -1,0 +1,13 @@
+# Advanced Example project
+- demonstrates utilizing sql with an express server via `sequelize`
+- demonstrates one approach to modularizing more complex `socket.io` logic on the server
+- demonstrates login/reg with `express-session`
+- demonstrates one approach to a backend service wrapping around `sequelize` orm calls
+- demonstrates server middleware to prevent requests from unauthenticated clients
+- demonstrates how to use a layout component with `react-router-dom`
+- demonstrates how to handle persistant authentication on the client with context
+- demonstrates infinite scroll pagination for direct message chat history
+- demonstrates one approach to a frontend service wrapping around `axios` api calls
+- demonstrates various custom hooks for things such as data fetching
+- demonstrates one approach to designing a re-usable form component with `AuthForm.jsx`
+- demonstrates listening for and cleaning up `socket.io-client` listeners on the client
